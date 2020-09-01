@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>簡易掲示板</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'bbs/css/style.css'%}">
+</head>
+<body>
+    <header class="bg-primary">
+        <a href="{% url 'bbs:index' %}"><h1 class="text-center text-white">簡易掲示板</h1></a>
+    </header>
+
+    <main class="container">
+        <!--forms.pyから継承したviews.pyがcontext内に格納したformを参照している。-->
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="my-2">{{ form.name }}</div>
+            <div class="my-2">{{ form.comment }}</div>
+
+            <input class="form-control" type="submit" value="送信">
+        </form>
+
+        <!--ここにBBSに投稿された物を全て掲載する。-->
+        <div class="bbs_area">
+            {% for content in data %}
+            <div class="comment_area">
+                <div class="comment_name">名前:{{ content.name }}</div>
+                <div class="comment">{{ content.comment|linebreaksbr|urlize }}</div>
+                <div class="comment_dt">投稿日:{{ content.post_dt }}</div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </main>
+
+</body>
+</html>
+

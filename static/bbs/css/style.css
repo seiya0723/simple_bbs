@@ -1,0 +1,36 @@
+html {
+  font-size: 18px;
+}
+@media (max-width:  768px)  {
+  html {
+    font-size: 15px;
+  }
+}
+
+.bbs_area {
+}
+.comment_area {
+    margin:0.5rem 0;
+    padding:0.5rem;
+
+    border:solid 0.2rem black;
+    border-radius:0.5rem;
+    background:white;
+
+    
+}
+
+.comment_name {
+    font-size:0.9rem;
+    font-weight:bold;
+}
+.comment {
+    padding:0.5rem;
+    font-size:1.1rem;
+    
+}
+.comment_dt {
+    font-size:0.9rem;
+    text-align:right;
+}
+
