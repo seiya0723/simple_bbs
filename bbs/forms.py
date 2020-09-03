@@ -1,5 +1,5 @@
 #モデルのフィールド定義を継承し、フォームとする。
-from .models import *
+from .models import Topic
 from django.forms import ModelForm,TextInput,Textarea
 
 

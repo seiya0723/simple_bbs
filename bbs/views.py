@@ -2,10 +2,10 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views import View
-from .models import *
+from .models import Topic
 
 #フォームをインポート
-from .forms import *
+from .forms import TopicForm
 
 from django.utils import timezone
 
