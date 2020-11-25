@@ -31,7 +31,6 @@ except ImportError:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#localhostsのアクセスを許可する
 ALLOWED_HOSTS = [ "127.0.0.1" ]
 
 
